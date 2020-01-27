@@ -45,6 +45,7 @@ function setTime() {
     if(secondsLeft === 0) {
       clearInterval(timerInterval);
       showScores();
+      addPersonToList();
     }
 
   }, 1000);
@@ -53,6 +54,7 @@ function setTime() {
 function populate() {
     if(quiz.isEnded()) {
         showScores();
+        addPersonToList();
         //incorporate the name signing thing into show scores function?
     }
     else {
@@ -88,14 +90,45 @@ function showProgress() {
     element.innerHTML = "Question " + currentQuestionNumber + " of " + quiz.questions.length;
 };
 
+
+let scoresheet = document.querySelector("#scoresheet")
+
+
 function showScores() {
+    scoresheet.classList.remove("hide");
     var gameOverHTML = "<h1>Result</h1>";
-    gameOverHTML += "<h2 id='score'> Your scores: " + quiz.score + "</h2>";
+    gameOverHTML += "<h2 id='score'> Your score: " + quiz.score + " correct out of 5!</h2>";
     var element = document.getElementById("quiz");
     element.innerHTML = gameOverHTML;
+    keyEventsEl.classList.remove("hide");
+
     //incorporate the score addition form (no default...)
 };
 
+//addpersontolistjava here//
+function addPersonToList(event) {
+  event.preventDefault();
+  var name = nameEl.value;
+  var li = document.createElement("li");
+  li.id = people.length;
+  li.innerHTML = name + " got " + quiz.score + " correct out of 5.";
+  people.push({ name: name });
+  peopleListEl.append(li);
+}
+
+var addBtn = document.querySelector('#add-btn');
+var nameEl = document.querySelector("#name");
+var peopleListEl = document.querySelector("#people-list");
+var modalEl = document.querySelector("#modal-container");
+var modalNameEl = document.querySelector("#modal-name");
+var descriptionEl = document.querySelector("#description");
+var closeEl = document.querySelector(".close");
+
+
+addBtn.addEventListener("click", addPersonToList);
+
+
+var people = [{ name: "Stan Lee got a 5 out of 5" }];
 
 
 
