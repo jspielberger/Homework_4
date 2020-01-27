@@ -86,12 +86,13 @@ body {
     display: none;
   }
 
-  span {
+span {
     cursor: pointer;
   }
   
   .modal {
-    display: none;  
+    display: none;
+    margin-left: 50px;  
   }
   
   .modal-header {
@@ -99,11 +100,13 @@ body {
     background-color: #586994;
     color: white;
   }
-  
-  .modal-body {padding: 2px 16px;}
+
+  .modal-body {
+      padding: 2px 16px;
+      margin-left: 15px;
+    }
   
   .modal-content {
-    position: relative;
     background-color: #fefefe;
     margin: auto;
     padding: 0;
@@ -112,3 +115,11 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   }
   
+  #scoresheet {
+      margin-left: 50px;
+      margin-right: 50px;
+  }
+
+  input {
+      padding-left: 20%;
+  }

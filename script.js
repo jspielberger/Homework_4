@@ -92,6 +92,7 @@ function showProgress() {
 
 
 let scoresheet = document.querySelector("#scoresheet")
+let progress = document.querySelector("#progress")
 
 
 function showScores() {
@@ -101,6 +102,7 @@ function showScores() {
     var element = document.getElementById("quiz");
     element.innerHTML = gameOverHTML;
     keyEventsEl.classList.remove("hide");
+    progress.classList.add("hide")
 
     //incorporate the score addition form (no default...)
 };
