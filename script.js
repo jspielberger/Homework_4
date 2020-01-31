@@ -4,7 +4,7 @@ function Quiz(questions) {
     this.questionIndex = 0;
 }
 
-let secondsLeft = 20;
+let secondsLeft = 60;
 
 
 Quiz.prototype.getQuestionIndex = function() {
@@ -103,8 +103,8 @@ function showScores() {
     gameOverHTML += "<h2 id='score'> Your score: " + quiz.score + " correct out of 5!</h2>";
     var element = document.getElementById("quiz");
     element.innerHTML = gameOverHTML;
-    keyEventsEl.classList.remove("hide");
-    progress.classList.add("hide");
+    keyEventsEl.classList.remove(".hide");
+    progress.classList.add(".hide");
     //incorporate the score addition form (no default...)
 };
 
