@@ -4,7 +4,7 @@ function Quiz(questions) {
     this.questionIndex = 0;
 }
 
-let secondsLeft = 90;
+let secondsLeft = 20;
 
 
 Quiz.prototype.getQuestionIndex = function() {
@@ -37,18 +37,20 @@ Question.prototype.isCorrectAnswer = function(choice) {
 //
 let timeEl = document.querySelector(".time");
 
-function setTime() {
-  var timerInterval = setInterval(function() {
+let timerInterval = setInterval(function() {
     secondsLeft--;
     timeEl.textContent = secondsLeft + " seconds left till end of Spider quiz.";
-
     if(secondsLeft === 0) {
-      clearInterval(timerInterval);
-      showScores();
-      addPersonToList();
-    }
+        clearInterval(timerInterval);
+        showScores();
+        addPersonToList();
+      }
+}, 1000);
 
-  }, 1000);
+
+function setTime() {
+    timerInterval;
+
 }
 //
 function populate() {
@@ -102,8 +104,7 @@ function showScores() {
     var element = document.getElementById("quiz");
     element.innerHTML = gameOverHTML;
     keyEventsEl.classList.remove("hide");
-    progress.classList.add("hide")
-
+    progress.classList.add("hide");
     //incorporate the score addition form (no default...)
 };
 

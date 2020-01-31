@@ -84,6 +84,7 @@ body {
 }
 .hide {
     display: none;
+    font-display: block;
   }
 
 span {
@@ -92,7 +93,7 @@ span {
   
   .modal {
     display: none;
-    margin-left: 50px;  
+    margin-left: 100px;  
   }
   
   .modal-header {
@@ -107,6 +108,7 @@ span {
     }
   
   .modal-content {
+    position: absolute;
     background-color: #fefefe;
     margin: auto;
     padding: 0;
@@ -121,5 +123,5 @@ span {
   }
 
   input {
-      padding-left: 20%;
+      padding-left: 10%;
   }
